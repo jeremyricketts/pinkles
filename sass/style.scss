@@ -5,7 +5,8 @@
 @import "utilities"; // Utility classes from HTML5BP, custom utility classes, and SASS mixins.
 @import "animation"; // 
 @import "media-queries"; // 
-@import "grid"; //
+@import "grid"; // It's just a mixin. See file for documentation.
+@import "font-awesome"; // Font Awesome 3.0.2
 
 
 /* ==========================================================================
@@ -31,15 +32,44 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 * { @include box-sizing(border-box);} // Crazy, right? http://learnlayout.com/box-sizing.html
 // remove the default gray highlight
 html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+// Basic Headings. I prefer to keep the styled off the h1 and h2 elements and relegate them to classes.
+.heading1 {
+	font-size: 2em; margin: 0.67em 0; font-weight:bold;
+}
+.heading2 {
+	font-size: 1.5em; margin: 0.83em 0; font-weight:bold;
+}
+.heading3 {
+    font-size: 1.17em; margin: 1em 0; font-weight:bold;
+}
+.heading4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+    font-weight:bold;
+}
+[class*="heading"] { // Vertically center the icons when part of headings. Look good even if it wraps.
+	&[class*="has-icon"] { position:relative;}
+	> [class*="icon-"] { position:absolute; left:0; top:0; bottom:0; }
+	&.has-icon-large { padding-left:1.4em; padding-top:0; }
+	&.has-icon-2x { padding-left:2em; padding-top:0.35em; }
+	&.has-icon-3x { padding-left:3em; padding-top:0.8em;	}
+	&.has-icon-4x { padding-left:3.85em; padding-top:1.3em; }
+}
+
+
 
 /* ==========================================================================
    Base Colors
    ========================================================================== */
 
+html, button, input, select, textarea {
+    color: $textColor;
+}
 
 /* ==========================================================================
 	Base Wrappers
 	========================================================================== */
+
 .container {
 	margin:0 auto;
 	// @include mobile-landscape-and-above {
@@ -71,7 +101,18 @@ footer {
 
 }
 
-div[class*="col"]{
+/* ==========================================================================
+	SHARED: Navigation
+	========================================================================== */
+.main-nav {
+	@include horizontal-list;
+}
+
+/* ==========================================================================
+	PAGE: Index
+	========================================================================== */
+
+div[class*="col"], div[class*=" col"]{
 	@include clearfix;
 	background:#efefef;
 	padding:10px;
@@ -110,6 +151,17 @@ div[class*="col"]{
 			float:none;
 		}
 	}
+}
+
+.cause-wrap {
+	@include clearfix;
+	div {
+		@include grid(5,2);
+	}
+}
+
+.bullets-test {
+	@include no-bullets;
 }
 
 
