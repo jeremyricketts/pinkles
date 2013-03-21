@@ -1,0 +1,119 @@
+
+/*
+	Simple, % driven grids. Define the number of columns, how many columns that element should
+	spread, and whether or not the items should go right-to-left, rather than left-to-right.
+	This also means the markup is free from layout classes. Disadvantage: no push/pull.
+	Note that this depends on @include box-sizing(border-box) which means IE8+
+*/
+
+/* ==========================================================================
+	Grid
+	========================================================================== */
+// grid( number-of-columns, columns-to-span, go-right-to-left? )
+@mixin grid($gr-cols, $gr-span, $gr-reverse: false) {
+	width: (100%/$gr-cols*$gr-span);
+	@if $gr-reverse { float:right; } @else { float:left;}
+}
+
+/*
+
+/////// EXAMPLE: MARKUP /////////////
+
+<div class="some-group-of-cols">
+	<div class="col">
+		<p>col1</p>
+	</div>
+	<div class="col">
+		<p>col2</p>
+	</div>
+	<div class="col">
+		<p>col3</p>
+	</div>
+</div>
+
+<div class="some-group-of-uneven-cols">
+	<div class="col1">
+		<p>col1</p>
+	</div>
+	<div class="col2">
+		<p>col2</p>
+	</div>
+	<div class="col3">
+		<p>col3</p>
+	</div>
+</div>
+
+<div class="one-50percent-col">
+	<div class="col">
+		<p>Hey I'm in the middle</p>
+	</div>
+</div>
+
+/////// EXAMPLE: SCSS /////////////
+
+div[class*="col"]{
+	@include clearfix;
+	background:#efefef;
+	padding:10px;
+	p {
+		background:#999;
+	}
+}
+
+.some-group-of-cols {
+	> .col {
+		@include grid(3,1, true); // That would make 1/3 columns in reverse order.
+	}
+}
+
+.some-group-of-uneven-cols {
+	// For mobile, we'll leave them 100%. But for the rest...
+	@include tablet-portrait-and-above {
+		.col1 {
+			@include grid(12,2);
+		}
+		.col2 {
+			@include grid(12,4);
+		}
+		.col3 {
+			@include grid(12,6);
+		}
+	}
+}
+.one-50percent-col {
+	@include clearfix;
+	div {
+		text-align:center;
+		@include tablet-portrait-and-above {
+			@include grid(2,1);
+			margin:0 auto;
+			float:none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

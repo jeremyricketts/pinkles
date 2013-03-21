@@ -28,9 +28,7 @@ I'm a small boilerplate for modern web projects. Or, to put it another way, I'm 
 
 IE8+, Firefox, Chrome, Safari.
 
----
-
-# I'm made of...
+## I'm made of...
 
 ### Normalize.css
 

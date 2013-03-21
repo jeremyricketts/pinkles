@@ -1,0 +1,133 @@
+
+@import "compass"; // Compass 0.12.2 (06/24/2012)
+@import "normalize"; // normalize.css v1.1.0, modified to remove IE67 hacks.
+@import "variables"; // Custom
+@import "utilities"; // Utility classes from HTML5BP, custom utility classes, and SASS mixins.
+@import "animation"; // 
+@import "media-queries"; // 
+@import "grid"; //
+
+
+/* ==========================================================================
+	Misc Fixes
+	========================================================================== */
+
+img { vertical-align: middle;} //Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+textarea { resize: vertical; } //Allow only vertical resizing of textareas.
+
+/* ==========================================================================
+   Base Typography
+   ========================================================================== */
+
+// Base Color
+html, button, input, select, textarea { color: #222; } // change to variable
+// Base font size and line height
+body { font-size: 1em; line-height: 1.4; }
+// Better looking hr's.
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+// Better selection style
+::-moz-selection { background: #b3d4fc; text-shadow: none; } // Declarations must be separate (h5bp.com/i)
+::selection { background: #b3d4fc; text-shadow: none; }
+* { @include box-sizing(border-box);} // Crazy, right? http://learnlayout.com/box-sizing.html
+// remove the default gray highlight
+html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+/* ==========================================================================
+   Base Colors
+   ========================================================================== */
+
+
+/* ==========================================================================
+	Base Wrappers
+	========================================================================== */
+.container {
+	margin:0 auto;
+	// @include mobile-landscape-and-above {
+	// 	max-width:$mq-mobile-landscape;
+	// }
+	@include tablet-portrait-and-above {
+		max-width:$mq-tablet-portrait;
+	}
+	@include tablet-landscape-and-above {
+		max-width:$mq-tablet-landscape;
+	}
+}
+header {
+	@include clearfix;
+	@include tablet-landscape-and-above {
+		background:red;
+	}
+	@include tablet-landscape-and-below {
+		background:green;
+	}
+	@include tablet-portrait-and-below {
+		background:yellow;
+	}
+	@include mobile-landscape-and-below {
+		background:orange;
+	}
+}
+footer {
+
+}
+
+div[class*="col"]{
+	@include clearfix;
+	background:#efefef;
+	padding:10px;
+	p {
+		background:#999;
+	}
+}
+
+.some-group-of-cols {
+	> .col {
+		@include grid(3,1, true); // That would make 1/3 columns in reverse order.
+	}
+}
+
+.some-group-of-uneven-cols {
+	// For mobile, we'll leave them 100%. But for the rest...
+	@include tablet-portrait-and-above {
+		.col1 {
+			@include grid(12,2);
+		}
+		.col2 {
+			@include grid(12,4);
+		}
+		.col3 {
+			@include grid(12,6);
+		}
+	}
+}
+.one-50percent-col {
+	@include clearfix;
+	div {
+		text-align:center;
+		@include tablet-portrait-and-above {
+			@include grid(2,1);
+			margin:0 auto;
+			float:none;
+		}
+	}
+}
+
+
+/* ==========================================================================
+	Base Forms
+	========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	Print Styles
+	========================================================================== */
+@import "print";
