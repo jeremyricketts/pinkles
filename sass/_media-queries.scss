@@ -134,14 +134,17 @@ $mq-desktop : 75em !default; // 75em * 16px = 1200px
 		@content;
 	}
 }
- 
+
+// Retina image backgrounds: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+// Also see: http://paulstamatiou.com/responsive-retina-blog-development-part-2 & https://github.com/adamdbradley/foresight.js for more complex implementations. This is sort of the most basic way of doing it.
 @mixin image-2x($image, $width: auto, $height: $width) {
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-         only screen and (-o-min-device-pixel-ratio: 13/10),
-         only screen and (min-resolution: 120dpi) {
-    background-image: url($image);
-    @if $width != auto {
-      background-size: $width $height;
-    }
-  }
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+		only screen and (-o-min-device-pixel-ratio: 13/10),
+		only screen and (min-resolution: 120dpi) {
+		background-image: url($image);
+		@if $width != auto {
+			background-size: $width $height;
+		}
+	}
 }
+
