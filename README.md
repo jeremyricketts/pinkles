@@ -12,7 +12,7 @@ I Support E8+, Firefox, Chrome, Safari.
 
 ## A set of common CSS utility classes
 
-[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE<8 browser hacks (example: <code>*text-indent: -9999px;</code>), or 3) are duplicated by Compass (example: Image replacement utility class).
+[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE6&7 browser hacks (example: `*text-indent: -9999px;`), or 3) are duplicated by Compass (example: Image replacement utility class).
 
 ## A grid framework
 
