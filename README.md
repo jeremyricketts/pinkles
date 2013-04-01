@@ -12,7 +12,7 @@ I Support E8+, Firefox, Chrome, Safari.
 
 ## A set of common CSS utility classes
 
-[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE6&7 browser hacks (example: `*text-indent: -9999px;`), or 3) are duplicated by Compass (example: Image replacement utility class).
+[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE6&7 browser hacks (example: `*text-indent: -9999px;`), or 3) are duplicated by Compass (example: Both HTML5BP and Compass have utility classes for "image replacement" and "clearfix" utilities).
 
 ## A grid framework
 
@@ -34,7 +34,11 @@ In the end, I learned it comes down to this: can you use `box-sizing: border-box
 * { @include box-sizing(border-box);}
 ```
 
-Crazy, right? If you're able to use this one simple line, your life will change. And your %-based grid framework gets really really simple. In the end I found that when I'm able to use the border-box box model, all I need to do to create a responsive grid framework _that fulfills all the requirements listed above_ is a simple mixin:
+Crazy, right? If you're able to use this one simple line, your life will change. Your percentage-based grid framework gets really simple. 
+
+In the end I found that when I'm able to use the `border-box` box model, all I need to create a responsive grid framework _that fulfills all the requirements listed above_ is a four line mixin.
+
+Here it is:
 
 ```scss
 // grid( number-of-columns, columns-to-span, go-right-to-left? )
@@ -82,7 +86,7 @@ Nicolas Gallagher's [Normalize.css](https://github.com/necolas/normalize.css) ne
 
 Anthony Short's [comprehensive collection](https://gist.github.com/anthonyshort/2028061) media-query breakpoints is stellar. Why? A few reasons. 
 
-1) Unlike [Bootstrap's breakpoints](http://twitter.github.com/bootstrap/scaffolding.html#responsive) they don't dictate a way of designing. There is no "default" screen width and then a set of overrides. Having worked with.
+1) Unlike [Bootstrap's breakpoints](http://twitter.github.com/bootstrap/scaffolding.html#responsive) they don't dictate a way of designing. There is no "default" screen width and then a set of overrides for smaller and larger screen sizes. I found Boostrap and [Less Framework 4](http://lessframework.com/) particularly heavy handed in this regard.
 
 2) Spanning across multiple breakpoints. Cascades like this are useful: `tablet-landscape-and-below`. It means you're not having to constantly restate your styles for different media queries, as with frameworks like [Less Framework 4](http://lessframework.com/).
 
