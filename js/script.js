@@ -33,6 +33,8 @@ $(function() {
 		return false;
 	});
 
+	//alert($('html').attr('class'));
+
 });
 
 

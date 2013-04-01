@@ -16,6 +16,13 @@
 img { vertical-align: middle;} //Remove the gap between images and the bottom of their containers: h5bp.com/i/440
 textarea { resize: vertical; } //Allow only vertical resizing of textareas.
 
+// Make sure all text inputs larger for touch inputs. http://globalmoxie.com/blog/desktop-touch-design.shtml
+html.touch {
+	input[type="text"] {
+		min-height:44px;
+	}
+}
+
 /* ==========================================================================
    Base Typography
    ========================================================================== */

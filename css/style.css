@@ -2202,21 +2202,26 @@ textarea {
   resize: vertical;
 }
 
+/* line 21, ../sass/style.scss */
+html.touch input[type="text"] {
+  min-height: 44px;
+}
+
 /* ==========================================================================
    Base Typography
    ========================================================================== */
-/* line 24, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 html, button, input, select, textarea {
   color: #222;
 }
 
-/* line 26, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 body {
   font-size: 1em;
   line-height: 1.4;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 hr {
   display: block;
   height: 1px;
@@ -2226,85 +2231,85 @@ hr {
   padding: 0;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 34, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 36, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .heading1 {
   font-size: 2em;
   margin: 0.67em 0;
   font-weight: bold;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .heading2 {
   font-size: 1.5em;
   margin: 0.83em 0;
   font-weight: bold;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .heading3 {
   font-size: 1.17em;
   margin: 1em 0;
   font-weight: bold;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .heading4 {
   font-size: 1em;
   margin: 1.33em 0;
   font-weight: bold;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 [class*="heading"][class*="has-icon"] {
   position: relative;
 }
-/* line 52, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 [class*="heading"] > [class*="icon-"] {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
 }
-/* line 53, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 [class*="heading"].has-icon-large {
   padding-left: 1.4em;
   padding-top: 0;
 }
-/* line 54, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 [class*="heading"].has-icon-2x {
   padding-left: 2em;
   padding-top: 0.35em;
 }
-/* line 55, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 [class*="heading"].has-icon-3x {
   padding-left: 3em;
   padding-top: 0.8em;
 }
-/* line 56, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 [class*="heading"].has-icon-4x {
   padding-left: 3.85em;
   padding-top: 1.3em;
@@ -2313,7 +2318,7 @@ html {
 /* ==========================================================================
    Base Colors
    ========================================================================== */
-/* line 65, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 html, button, input, select, textarea {
   color: #222222;
 }
@@ -2321,48 +2326,48 @@ html, button, input, select, textarea {
 /* ==========================================================================
 	Base Wrappers
 	========================================================================== */
-/* line 73, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .container {
   margin: 0 auto;
 }
 @media only screen and (min-width: 48em) {
-  /* line 73, ../sass/style.scss */
+  /* line 80, ../sass/style.scss */
   .container {
     max-width: 48em;
   }
 }
 @media only screen and (min-width: 64em) {
-  /* line 73, ../sass/style.scss */
+  /* line 80, ../sass/style.scss */
   .container {
     max-width: 64em;
   }
 }
 
-/* line 85, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 header {
   overflow: hidden;
   *zoom: 1;
 }
 @media only screen and (min-width: 64em) {
-  /* line 85, ../sass/style.scss */
+  /* line 92, ../sass/style.scss */
   header {
     background: red;
   }
 }
 @media only screen and (max-width: 64em) {
-  /* line 85, ../sass/style.scss */
+  /* line 92, ../sass/style.scss */
   header {
     background: green;
   }
 }
 @media only screen and (max-width: 48em) {
-  /* line 85, ../sass/style.scss */
+  /* line 92, ../sass/style.scss */
   header {
     background: yellow;
   }
 }
 @media only screen and (max-width: 30em) {
-  /* line 85, ../sass/style.scss */
+  /* line 92, ../sass/style.scss */
   header {
     background: orange;
   }
@@ -2371,7 +2376,7 @@ header {
 /* ==========================================================================
 	SHARED: Navigation
 	========================================================================== */
-/* line 107, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 .main-nav {
   margin: 0;
   padding: 0;
@@ -2379,7 +2384,7 @@ header {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 60, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 60, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .main-nav li {
   list-style-image: none;
   list-style-type: none;
@@ -2390,15 +2395,15 @@ header {
   padding-left: 4px;
   padding-right: 4px;
 }
-/* line 48, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 48, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .main-nav li:first-child, .main-nav li.first {
   padding-left: 0;
 }
-/* line 49, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 49, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .main-nav li:last-child {
   padding-right: 0;
 }
-/* line 50, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .main-nav li.last {
   padding-right: 0;
 }
@@ -2406,53 +2411,53 @@ header {
 /* ==========================================================================
 	PAGE: Index
 	========================================================================== */
-/* line 115, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 div[class*="col"], div[class*=" col"] {
   overflow: hidden;
   *zoom: 1;
   background: #efefef;
   padding: 10px;
 }
-/* line 119, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 div[class*="col"] p, div[class*=" col"] p {
   background: #999;
 }
 
-/* line 125, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .some-group-of-cols > .col {
   width: 33.33333%;
   float: right;
 }
 
 @media only screen and (min-width: 48em) {
-  /* line 133, ../sass/style.scss */
+  /* line 140, ../sass/style.scss */
   .some-group-of-uneven-cols .col1 {
     width: 16.66667%;
     float: left;
   }
-  /* line 136, ../sass/style.scss */
+  /* line 143, ../sass/style.scss */
   .some-group-of-uneven-cols .col2 {
     width: 33.33333%;
     float: left;
   }
-  /* line 139, ../sass/style.scss */
+  /* line 146, ../sass/style.scss */
   .some-group-of-uneven-cols .col3 {
     width: 50%;
     float: left;
   }
 }
 
-/* line 144, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .one-50percent-col {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 146, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 .one-50percent-col div {
   text-align: center;
 }
 @media only screen and (min-width: 48em) {
-  /* line 146, ../sass/style.scss */
+  /* line 153, ../sass/style.scss */
   .one-50percent-col div {
     width: 50%;
     float: left;
@@ -2461,22 +2466,22 @@ div[class*="col"] p, div[class*=" col"] p {
   }
 }
 
-/* line 156, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 .cause-wrap {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 158, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .cause-wrap div {
   width: 40%;
   float: left;
 }
 
-/* line 163, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 .bullets-test {
   list-style: none;
 }
-/* line 11, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_bullets.scss */
+/* line 11, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_bullets.scss */
 .bullets-test li {
   list-style-image: none;
   list-style-type: none;
