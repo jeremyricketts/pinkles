@@ -6,7 +6,7 @@ I'm a small boilerplate for modern web projects. Or, to put it another way, I'm 
 
 I require [SASS](http://sass-lang.com/) and [Compass](http://compass-style.org/).
 
-I Support E8+, Firefox, Chrome, Safari.
+I support E8+, Firefox, Chrome, Safari.
 
 # Here's what I provide (and why):
 
