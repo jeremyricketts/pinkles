@@ -44,7 +44,9 @@ Crazy, right? If you're able to use this one simple line, your life will change.
 }
 ```
 
-The added bonus here is that you can target all your grid directives from the SASS side of things. Like this:
+The added bonus here is that you can target all your grid directives from the SASS side of things. 
+
+Here's some sample markup for a 3 column left-to-right grid:
 
 ```html
 <div class="whatever-classname">
@@ -88,8 +90,10 @@ The version I've included is a variation of Anthony's work, by [Paul Satmtiou](h
 
 ## CSS3 animation framework
 
-Dan Eden's [Animate.css](http://daneden.me/animate)** is brilliant.
+Dan Eden's [Animate.css](http://daneden.me/animate) is brilliant.
 
-## Font Awesome icon font
+## "Font Awesome" iconic font library
 
-I try to not be too opinionated on things aesthetically. In fact, some of HTML5's boilerplate has been removed because it was too aesthetically opinionated. However, I'll make an exception for Dave Gandy's [Font Awesome](http://fortawesome.github.com/Font-Awesome/) iconic font library. It was originally made for [Bootstrap](http://twitter.github.com/bootstrap/) and it's well maintained. Having quick access to basic shaped is a good thing. I think of it as more of an extension to [HTML5's collection of entities](http://dev.w3.org/html5/html-author/charref). 
+Having quick access to basic shapes is a good thing. I think of these as an extension to [HTML5's collection of entities](http://dev.w3.org/html5/html-author/charref). 
+
+I try to not be too opinionated on things aesthetically. In fact, some of HTML5's boilerplate has been removed because it was too aesthetically opinionated. However, I'll make an exception for Dave Gandy's [Font Awesome](http://fortawesome.github.com/Font-Awesome/) iconic font library. It was originally made for [Bootstrap](http://twitter.github.com/bootstrap/) and it's well maintained.
