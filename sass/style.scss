@@ -24,6 +24,17 @@ html.touch {
 }
 
 /* ==========================================================================
+   Testing Utilities
+   ========================================================================== */
+body {
+	@include clearfix;
+	@include desktop-and-up { border-top: 2px solid red; }
+	@include tablet-landscape-and-down { border-top: 2px solid green; }
+	@include tablet-portrait-and-down { border-top: 2px solid yellow; }
+	@include mobile-landscape-and-down { border-top: 2px solid orange; }
+}
+
+/* ==========================================================================
    Base Typography
    ========================================================================== */
 
@@ -79,29 +90,14 @@ html, button, input, select, textarea {
 
 .container {
 	margin:0 auto;
-	// @include mobile-landscape-and-above {
+	// @include mobile-landscape-and-up {
 	// 	max-width:$mq-mobile-landscape;
 	// }
-	@include tablet-portrait-and-above {
+	@include tablet-portrait-and-up {
 		max-width:$mq-tablet-portrait;
 	}
-	@include tablet-landscape-and-above {
+	@include tablet-landscape-and-up {
 		max-width:$mq-tablet-landscape;
-	}
-}
-header {
-	@include clearfix;
-	@include tablet-landscape-and-above {
-		background:red;
-	}
-	@include tablet-landscape-and-below {
-		background:green;
-	}
-	@include tablet-portrait-and-below {
-		background:yellow;
-	}
-	@include mobile-landscape-and-below {
-		background:orange;
 	}
 }
 footer {
@@ -136,7 +132,7 @@ div[class*="col"], div[class*=" col"]{
 
 .some-group-of-uneven-cols {
 	// For mobile, we'll leave them 100%. But for the rest...
-	@include tablet-portrait-and-above {
+	@include tablet-portrait-and-up {
 		.col1 {
 			@include grid(12,2);
 		}
@@ -152,7 +148,7 @@ div[class*="col"], div[class*=" col"]{
 	@include clearfix;
 	div {
 		text-align:center;
-		@include tablet-portrait-and-above {
+		@include tablet-portrait-and-up {
 			@include grid(2,1);
 			margin:0 auto;
 			float:none;

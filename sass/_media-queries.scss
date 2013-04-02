@@ -1,21 +1,32 @@
-// Originally: https://gist.github.com/anthonyshort/2028061
-// EM version: https://gist.github.com/stammy/4442615
-// http://paulstamatiou.com/responsive-retina-blog-development-part-1 ...
-// "It's all relative (why you should use ems for breakpoints)"
- 
-$mq-mobile-portrait: 20em !default; // 20em * 16px = 320px
-$mq-mobile-landscape: 30em !default; // 40em * 16px = 480px
-$mq-tablet-portrait: 48em !default; // 48em * 16px = 768px
-$mq-tablet-landscape: 64em !default; // 64em * 16px = 1024px
-$mq-desktop : 75em !default; // 75em * 16px = 1200px
- 
+// https://gist.github.com/anthonyshort/2028061
+// - image-2x mixin added at the bottom
+// - "below" changed to "down"
+
+// Media Queries in Sass 3.2
+//
+// These mixins make media queries a breeze with Sass.
+// The media queries from mobile up until desktop all 
+// trigger at different points along the way
+//
+// And important point to remember is that and width
+// over the portrait width is considered to be part of the
+// landscape width. This allows us to capture widths of devices
+// that might not fit the dimensions exactly. This means the break
+// points are seamless.
+
+$mq-mobile-portrait		: 320px !default;
+$mq-mobile-landscape	: 480px !default;
+$mq-tablet-portrait		: 768px !default;
+$mq-tablet-landscape	: 1024px !default;
+$mq-desktop				: 1382px !default;
+
 // Both portrait and landscape
 @mixin mobile-only {
 	@media (max-width : $mq-mobile-landscape) {
 		@content;
 	}
 }
- 
+
 // Everything up to and including the portrait width of the phone
 // Since it's the smallest query it doesn't need a min
 @mixin mobile-portrait-only {
@@ -23,119 +34,120 @@ $mq-desktop : 75em !default; // 75em * 16px = 1200px
 		@content;
 	}
 }
- 
+
 // Everything up to and including the mobile portrait
-@mixin mobile-portrait-and-below {
+@mixin mobile-portrait-and-down {
 	@media (max-width : $mq-mobile-portrait) {
 		@content;
 	}
 }
- 
+
 // Everything above and including the mobile portrait
-@mixin mobile-portrait-and-above {
+@mixin mobile-portrait-and-up {
 	@media (min-width : $mq-mobile-portrait) {
 		@content;
 	}
 }
- 
+
 // Everthing larger than a portrait mobile up until mobile landscape
 @mixin mobile-landscape-only {
-	@media only screen and (min-width : $mq-mobile-portrait + .001) and (max-width : $mq-mobile-landscape) {
-		@content;
-	}
-}
- 
-// Everything up to and including the mobile landscape width
-@mixin mobile-landscape-and-below {
-	@media only screen and (max-width : $mq-mobile-landscape) {
-		@content;
-	}
-}
- 
-// Everything above and including the mobile landscape width
-@mixin mobile-landscape-and-above {
-	@media only screen and (min-width : $mq-mobile-landscape) {
-		@content;
-	}
-}
- 
-// Both the portrait and landscape width of the tablet
-// Larger than a landscape mobile but less than or equal to a landscape tablet
-@mixin tablet-only {
-	@media only screen and (min-width : $mq-mobile-landscape + .001) and (max-width : $mq-tablet-landscape) {
-		@content;
-	}
-}
- 
-// Everything larger than mobile landscape up until the portrait width of the tablet
-@mixin tablet-portrait-only {
-	@media only screen and (min-width : $mq-mobile-landscape + .001) and (max-width : $mq-tablet-portrait) {
-		@content;
-	}
-}
- 
-// Everything below and including the portrait width of the tablet
-@mixin tablet-portrait-and-below {
-	@media only screen and (max-width : $mq-tablet-portrait) {
-		@content;
-	}
-}
- 
-// Everything above and including the portrait width of the tablet
-@mixin tablet-portrait-and-above {
-	@media only screen and (min-width : $mq-tablet-portrait) {
-		@content;
-	}
-}
- 
-// Larger than portrait but less than or equal to the landscape width
-@mixin tablet-landscape-only {
-	@media only screen and (min-width : $mq-tablet-portrait + .001) and (max-width : $mq-tablet-landscape) {
-		@content;
-	}
-}
- 
-// Up to and including the tablet landscape
-@mixin tablet-landscape-and-below {
-	@media only screen and (max-width : $mq-tablet-landscape) {
-		@content;
-	}
-}
- 
-// Everything tablet landscape and larger
-@mixin tablet-landscape-and-above {
-	@media only screen and (min-width : $mq-tablet-landscape) {
-		@content;
-	}
-}
- 
-// Everything larger than a landscape tablet
-@mixin desktop-and-above {
-	@media only screen and (min-width : $mq-tablet-landscape + .001) {
-		@content;
-	}
-}
- 
-// Everything below and including the desktop 
-@mixin desktop-and-below {
-	@media only screen and (max-width : $mq-desktop) {
-		@content;
-	}
-}
- 
-// Everything larger than a landscape tablet but less than or equal to the desktop
-@mixin desktop-only {
-	@media only screen and (min-width : $mq-tablet-landscape + .001) and (max-width : $mq-desktop) {
-		@content;
-	}
-}
- 
-@mixin retina {
-	@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi) {
+	@media only screen and (min-width : $mq-mobile-portrait + 1) and (max-width : $mq-mobile-landscape) {
 		@content;
 	}
 }
 
+// Everything up to and including the mobile landscape width
+@mixin mobile-landscape-and-down {
+	@media only screen and (max-width : $mq-mobile-landscape) {
+		@content;
+	}
+}
+
+// Everything above and including the mobile landscape width
+@mixin mobile-landscape-and-up {
+	@media only screen and (min-width : $mq-mobile-portrait + 1) {
+		@content;
+	}
+}
+
+// Both the portrait and landscape width of the tablet
+// Larger than a landscape mobile but less than or equal to a landscape tablet
+@mixin tablet-only {
+	@media only screen and (min-width : $mq-mobile-landscape + 1) and (max-width : $mq-tablet-landscape) {
+		@content;
+	}
+}
+
+// Everything larger than mobile landscape up until the portrait width of the tablet
+@mixin tablet-portrait-only {
+	@media only screen and (min-width : $mq-mobile-landscape + 1) and (max-width : $mq-tablet-portrait) {
+		@content;
+	}
+}
+
+// Everything down and including the portrait width of the tablet
+@mixin tablet-portrait-and-down {
+	@media only screen and (max-width : $mq-tablet-portrait) {
+		@content;
+	}
+}
+
+// Everything above and including the portrait width of the tablet
+@mixin tablet-portrait-and-up {
+	@media only screen and (min-width : $mq-mobile-landscape + 1) {
+		@content;
+	}
+}
+
+// Larger than portrait but less than or equal to the landscape width
+@mixin tablet-landscape-only {
+	@media only screen and (min-width : $mq-tablet-portrait + 1) and (max-width : $mq-tablet-landscape) {
+		@content;
+	}
+}
+
+// Up to and including the tablet landscape
+@mixin tablet-landscape-and-down {
+	@media only screen and (max-width : $mq-tablet-landscape) {
+		@content;
+	}
+}
+
+// Everything larger than portrait tablet
+@mixin tablet-landscape-and-up {
+	@media only screen and (min-width : $mq-tablet-portrait + 1) {
+		@content;
+	}
+}
+
+// Everything larger than a landscape tablet
+@mixin desktop-and-up {
+	@media only screen and (min-width : $mq-tablet-landscape + 1) {
+		@content;
+	}
+}
+
+// Everything down and including the desktop 
+@mixin desktop-and-down {
+	@media only screen and (max-width : $mq-desktop) {
+		@content;
+	}
+}
+
+// Everything larger than a landscape tablet but less than or equal to the desktop
+@mixin desktop-only {
+	@media only screen and (min-width : $mq-tablet-landscape + 1) and (max-width : $mq-desktop) {
+		@content;
+	}
+}
+
+// Retina screens have a 1.5 pixel ratio, not 2
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+		@content;
+	}
+}
+ 
 // Retina image backgrounds: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
 // Also see: http://paulstamatiou.com/responsive-retina-blog-development-part-2 & https://github.com/adamdbradley/foresight.js for more complex implementations. This is sort of the most basic way of doing it.
 @mixin image-2x($image, $width: auto, $height: $width) {
@@ -148,4 +160,3 @@ $mq-desktop : 75em !default; // 75em * 16px = 1200px
 		}
 	}
 }
-

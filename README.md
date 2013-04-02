@@ -12,7 +12,7 @@ I support E8+, Firefox, Chrome, Safari.
 
 ## A set of common CSS utility classes
 
-[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE6&7 browser hacks (example: `*text-indent: -9999px;`), or 3) are duplicated by Compass (example: Both HTML5BP and Compass have utility classes for "image replacement" and "clearfix" utilities).
+[HTML5 Boilerplate](http://html5boilerplate.com) provides some wonderful CSS utility classes. I've gone through and removed the ones that are 1) too aesthetically opinionated 2) rely on IE6&7 browser hacks (example: `*text-indent: -9999px;`), or 3) are duplicated by Compass (example: Both HTML5BP and Compass have classes for "image replacement" and "clearfix").
 
 ## A grid framework
 
@@ -88,9 +88,9 @@ Anthony Short's [comprehensive collection](https://gist.github.com/anthonyshort/
 
 1) Unlike [Bootstrap's breakpoints](http://twitter.github.com/bootstrap/scaffolding.html#responsive) they don't dictate a way of designing. There is no "default" screen width and then a set of overrides for smaller and larger screen sizes. I found Boostrap and [Less Framework 4](http://lessframework.com/) particularly heavy handed in this regard.
 
-2) Spanning across multiple breakpoints. Cascades like this are useful: `tablet-landscape-and-below`. It means you're not having to constantly restate your styles for different media queries, as with frameworks like [Less Framework 4](http://lessframework.com/).
+2) Spanning across multiple breakpoints. Cascades like this are useful: `tablet-landscape-and-down`. It means you're not having to constantly restate your styles for different media queries, as with frameworks like [Less Framework 4](http://lessframework.com/).
 
-The version I've included is a variation of Anthony's work, by [Paul Satmtiou](https://gist.github.com/stammy/4442615). Paul's version defines breakpoint widths in ems instead of pixels. Read Paul's explanation [here](http://paulstamatiou.com/responsive-retina-blog-development-part-1) under the section: "It's all relative (why you should use ems for breakpoints)."
+I've made 2 modifications: I've added 37 Signal's [image-2x mixin](http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss) and I've changed the word "below" to "down" (which matches the opposite word "up" that Anthony is using) for the mixin names.
 
 ## CSS3 animation framework
 
