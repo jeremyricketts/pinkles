@@ -1,4 +1,3 @@
-
 @import "compass"; // Compass 0.12.2 (06/24/2012)
 @import "normalize"; // normalize.css v1.1.0, modified to remove IE67 hacks.
 @import "variables"; // Custom
@@ -27,7 +26,6 @@ html.touch {
    Testing Utilities
    ========================================================================== */
 body {
-	@include clearfix;
 	@include desktop-and-up { border-top: 2px solid red; }
 	@include tablet-landscape-and-down { border-top: 2px solid green; }
 	@include tablet-portrait-and-down { border-top: 2px solid yellow; }
