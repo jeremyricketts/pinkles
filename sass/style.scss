@@ -45,7 +45,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 // Better selection style
 ::-moz-selection { background: #b3d4fc; text-shadow: none; } // Declarations must be separate (h5bp.com/i)
 ::selection { background: #b3d4fc; text-shadow: none; }
-* { @include box-sizing(border-box);} // Crazy, right? http://learnlayout.com/box-sizing.html
+*, *:before, *:after { @include box-sizing(border-box);} // Crazy, right? http://learnlayout.com/box-sizing.html
 // remove the default gray highlight
 html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 // Basic Headings. I prefer to keep the styled off the h1 and h2 elements and relegate them to classes.
